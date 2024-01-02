@@ -1,0 +1,111 @@
+---
+title: "Basic survival analysis in R"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+### Getting started
+
+The [survival package](https://cran.r-project.org/web/packages/survival/index.html) is installed along with the `base` functions in R, so all you need to do after opening R is to load the package using the `library()` function.
+
+The package comes with various in built datasets. For a full list, see the start of the index of [the survival reference manual](https://cran.r-project.org/web/packages/survival/survival.pdf). Each dataset is described in detailed in the manual. 
+
+Let us load the survival package and take a look at the dataset `myeloid`. 
+
+This is a simulated dataset based on a trial in acute myeloid leukemia, containing 646 observations of 9 variables. Among these variables, `futime` is the time to death or last time of follow-up, `death` is an event indicator (equal to 1 if the time listed in `futime` is a death and 0 if it is a censoring event), `trt` is the treatment arm (either arm A or arm B) and `sex` is the sex (where "f" is female and  "m" is male). 
+
+The function `head()` show the first 6 rows of the dataset.
+
+```{r starting}
+library(survival)
+head(myeloid)
+```
+
+---
+
+### Kaplan-Meier survival curves
+
+Survival curves can be plotted using the `survfit()` function, which take a formula as an argument.
+
+In the survival package the specification of time-to-event outcomes on the right side of the equation in the formula is done using the `Surv()` function. This function take the variable name used for the individual's event times and event indicator(s) as arguments.
+
+In the `myeloid` dataset the event times was called `futime` and the event indicators was called `death`, and `death==1` corresponded to an event time.
+
+The below code will produce a plot of the Kaplan-Meier survival function.
+
+```{r kaplan-meier, fig.align="center"}
+km <- survfit(Surv(futime, death==1) ~ 1, myeloid)
+plot(km, xlab="Time", ylab="Survival probability")
+```
+
+---
+
+Pointwise 95\% confidence intervals are added by default when only a single curve is plotted (which is the case when the right side of th formula is `1` as above).
+
+For more options see for example the R help file for `plot.survfit` by typing `?plot.survfit` in R. 
+
+Remember that for all R commands useful information on options, and often runnable examples, are available in the help files that can be accessed by typing `?` and the name of the command.
+
+### Nelson-Aalen cumulative hazard curves
+
+Similarly, a plot of the corresponding Nelson-Aalen cumulative hazard function can be produced by using the option `cumhaz=TRUE` when plotting the `survfit` object.
+
+```{r nelson-aalen, fig.align="center"}
+plot(km, cumhaz=T, xlab="Time", ylab="Cumulative hazard")
+```
+
+---
+
+### The log-rank test
+
+When interested in comparing survival curves between groups, these can be plotted by adding a categorical grouping variable on the right side of the equation in `survfit`. One such variable is the `trt` variable in the `myeloid` dataset.
+
+Se the below code, which produce separate curves for treatment group A and B, with an added legend using the `legend()` function.
+
+```{r kaplan-meier2, fig.align="center"}
+km2 <- survfit(Surv(futime, death==1) ~ trt, myeloid)
+plot(km2, col=c(1, 2), xlab="Time", ylab="Survival probability")
+legend("topright", c("trt = A", "trt = B"), col=1:2, lwd=2)
+```
+
+The most common test for comparing two survival curves is the log-rank test. This is here implemented with the `survdiff` function, and can be used as shown in the below code.
+
+```{r log-rank, fig.align="center"}
+survdiff(Surv(futime, death==1) ~ trt, myeloid)
+```
+
+We see that the p-value for the test is 0.002, which indicates a significant difference between groups at a 5\% significance level.
+
+---
+
+### The Cox proportional hazard model
+
+A similar test between groups can also be performed using a Cox proportional hazard model, with the function `coxph` as shown below.
+
+```{r cox, fig.align="center"}
+cfit <- coxph(Surv(futime, death==1) ~ trt, myeloid)
+summary(cfit)
+```
+
+We here see a p-value of 0.00206 for difference between groups, and an estimated hazard ratio of 0.7077 in favour of treatment B.
+
+More independent variables can now be included by adding variables to the right side of equation. The below code show a Cox model with `trt` and `sex` as independent variables.
+
+```{r cox2, fig.align="center"}
+cfit <- coxph(Surv(futime, death==1) ~ trt + sex, myeloid)
+summary(cfit)
+```
+
+---
+
+### Further references
+
+For a more thorough introduction, see for example [the survival package vignette](https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf) and the other vignettes of the [survival package](https://cran.r-project.org/web/packages/survival/index.html).
+
+</br>

@@ -1,0 +1,30 @@
+name: "iscbcourse"
+title: "ISCB course Spring 2024"
+type: website
+output_dir: "docs"
+output:
+  html_document:
+    self_contained: no
+    theme: flatly
+navbar:
+  title: 'ISCB Course Spring 2024'
+  search: true
+  right:
+  - text: "Home"
+    href: index.html
+  - text: "Resources"
+    menu:
+    - text: "Part 1"
+      href: part1.html
+    - text: "Part 2"
+      href: part2.html
+    - text: "Part 3"
+      href: part3.html
+    - text: "Part 4"
+      href: part4.html
+  - text: "About"
+    href: about.html
+  - label: "GitHub"
+    icon: fa-github fa-lg
+    href: http://github.com/jmgran/iscbcourse
+

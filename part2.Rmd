@@ -1,0 +1,29 @@
+---
+title: "Part 2: Extensions to time-dependent treatment strategies"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+### Lectures
+
+-
+
+---
+
+### R practical
+
+-
+
+---
+
+### Literature
+
+-
+
+</br>

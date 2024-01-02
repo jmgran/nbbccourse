@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Basic survival analysis in R</title>
+
+<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">ISCB Course Spring 2024</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Resources
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="part1.html">Part 1</a>
+    </li>
+    <li>
+      <a href="part2.html">Part 2</a>
+    </li>
+    <li>
+      <a href="part3.html">Part 3</a>
+    </li>
+    <li>
+      <a href="part4.html">Part 4</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="about.html">About</a>
+</li>
+<li>
+  <a href="http://github.com/jmgran/iscbcourse">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Basic survival analysis in R</h1>
+
+</div>
+
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+<hr />
+<div id="getting-started" class="section level3">
+<h3>Getting started</h3>
+<p>The <a
+href="https://cran.r-project.org/web/packages/survival/index.html">survival
+package</a> is installed along with the <code>base</code> functions in
+R, so all you need to do after opening R is to load the package using
+the <code>library()</code> function.</p>
+<p>The package comes with various in built datasets. For a full list,
+see the start of the index of <a
+href="https://cran.r-project.org/web/packages/survival/survival.pdf">the
+survival reference manual</a>. Each dataset is described in detailed in
+the manual.</p>
+<p>Let us load the survival package and take a look at the dataset
+<code>myeloid</code>.</p>
+<p>This is a simulated dataset based on a trial in acute myeloid
+leukemia, containing 646 observations of 9 variables. Among these
+variables, <code>futime</code> is the time to death or last time of
+follow-up, <code>death</code> is an event indicator (equal to 1 if the
+time listed in <code>futime</code> is a death and 0 if it is a censoring
+event), <code>trt</code> is the treatment arm (either arm A or arm B)
+and <code>sex</code> is the sex (where “f” is female and “m” is
+male).</p>
+<p>The function <code>head()</code> show the first 6 rows of the
+dataset.</p>
+<pre class="r"><code>library(survival)
+head(myeloid)</code></pre>
+<pre><code>##   id trt sex futime death txtime crtime rltime
+## 1  1   B   f    235     1     NA     44    113
+## 2  2   A   m    286     1    200     NA     NA
+## 3  3   A   f   1983     0     NA     38     NA
+## 4  4   B   f   2137     0    245     25     NA
+## 5  5   B   f    326     1    112     56    200
+## 6  6   B   f   2041     0    102     NA     NA</code></pre>
+<hr />
+</div>
+<div id="kaplan-meier-survival-curves" class="section level3">
+<h3>Kaplan-Meier survival curves</h3>
+<p>Survival curves can be plotted using the <code>survfit()</code>
+function, which take a formula as an argument.</p>
+<p>In the survival package the specification of time-to-event outcomes
+on the right side of the equation in the formula is done using the
+<code>Surv()</code> function. This function take the variable name used
+for the individual’s event times and event indicator(s) as
+arguments.</p>
+<p>In the <code>myeloid</code> dataset the event times was called
+<code>futime</code> and the event indicators was called
+<code>death</code>, and <code>death==1</code> corresponded to an event
+time.</p>
+<p>The below code will produce a plot of the Kaplan-Meier survival
+function.</p>
+<pre class="r"><code>km &lt;- survfit(Surv(futime, death==1) ~ 1, myeloid)
+plot(km, xlab=&quot;Time&quot;, ylab=&quot;Survival probability&quot;)</code></pre>
+<p><img src="survival_files/figure-html/kaplan-meier-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+<p>Pointwise 95% confidence intervals are added by default when only a
+single curve is plotted (which is the case when the right side of th
+formula is <code>1</code> as above).</p>
+<p>For more options see for example the R help file for
+<code>plot.survfit</code> by typing <code>?plot.survfit</code> in R.</p>
+<p>Remember that for all R commands useful information on options, and
+often runnable examples, are available in the help files that can be
+accessed by typing <code>?</code> and the name of the command.</p>
+</div>
+<div id="nelson-aalen-cumulative-hazard-curves" class="section level3">
+<h3>Nelson-Aalen cumulative hazard curves</h3>
+<p>Similarly, a plot of the corresponding Nelson-Aalen cumulative hazard
+function can be produced by using the option <code>cumhaz=TRUE</code>
+when plotting the <code>survfit</code> object.</p>
+<pre class="r"><code>plot(km, cumhaz=T, xlab=&quot;Time&quot;, ylab=&quot;Cumulative hazard&quot;)</code></pre>
+<p><img src="survival_files/figure-html/nelson-aalen-1.png" width="672" style="display: block; margin: auto;" /></p>
+<hr />
+</div>
+<div id="the-log-rank-test" class="section level3">
+<h3>The log-rank test</h3>
+<p>When interested in comparing survival curves between groups, these
+can be plotted by adding a categorical grouping variable on the right
+side of the equation in <code>survfit</code>. One such variable is the
+<code>trt</code> variable in the <code>myeloid</code> dataset.</p>
+<p>Se the below code, which produce separate curves for treatment group
+A and B, with an added legend using the <code>legend()</code>
+function.</p>
+<pre class="r"><code>km2 &lt;- survfit(Surv(futime, death==1) ~ trt, myeloid)
+plot(km2, col=c(1, 2), xlab=&quot;Time&quot;, ylab=&quot;Survival probability&quot;)
+legend(&quot;topright&quot;, c(&quot;trt = A&quot;, &quot;trt = B&quot;), col=1:2, lwd=2)</code></pre>
+<p><img src="survival_files/figure-html/kaplan-meier2-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>The most common test for comparing two survival curves is the
+log-rank test. This is here implemented with the <code>survdiff</code>
+function, and can be used as shown in the below code.</p>
+<pre class="r"><code>survdiff(Surv(futime, death==1) ~ trt, myeloid)</code></pre>
+<pre><code>## Call:
+## survdiff(formula = Surv(futime, death == 1) ~ trt, data = myeloid)
+## 
+##         N Observed Expected (O-E)^2/E (O-E)^2/V
+## trt=A 317      171      143      5.28      9.59
+## trt=B 329      149      177      4.29      9.59
+## 
+##  Chisq= 9.6  on 1 degrees of freedom, p= 0.002</code></pre>
+<p>We see that the p-value for the test is 0.002, which indicates a
+significant difference between groups at a 5% significance level.</p>
+<hr />
+</div>
+<div id="the-cox-proportional-hazard-model" class="section level3">
+<h3>The Cox proportional hazard model</h3>
+<p>A similar test between groups can also be performed using a Cox
+proportional hazard model, with the function <code>coxph</code> as shown
+below.</p>
+<pre class="r"><code>cfit &lt;- coxph(Surv(futime, death==1) ~ trt, myeloid)
+summary(cfit)</code></pre>
+<pre><code>## Call:
+## coxph(formula = Surv(futime, death == 1) ~ trt, data = myeloid)
+## 
+##   n= 646, number of events= 320 
+## 
+##         coef exp(coef) se(coef)      z Pr(&gt;|z|)   
+## trtB -0.3457    0.7077   0.1122 -3.081  0.00206 **
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##      exp(coef) exp(-coef) lower .95 upper .95
+## trtB    0.7077      1.413    0.5681    0.8818
+## 
+## Concordance= 0.545  (se = 0.014 )
+## Likelihood ratio test= 9.52  on 1 df,   p=0.002
+## Wald test            = 9.5  on 1 df,   p=0.002
+## Score (logrank) test = 9.59  on 1 df,   p=0.002</code></pre>
+<p>We here see a p-value of 0.00206 for difference between groups, and
+an estimated hazard ratio of 0.7077 in favour of treatment B.</p>
+<p>More independent variables can now be included by adding variables to
+the right side of equation. The below code show a Cox model with
+<code>trt</code> and <code>sex</code> as independent variables.</p>
+<pre class="r"><code>cfit &lt;- coxph(Surv(futime, death==1) ~ trt + sex, myeloid)
+summary(cfit)</code></pre>
+<pre><code>## Call:
+## coxph(formula = Surv(futime, death == 1) ~ trt + sex, data = myeloid)
+## 
+##   n= 646, number of events= 320 
+## 
+##         coef exp(coef) se(coef)      z Pr(&gt;|z|)   
+## trtB -0.3582    0.6989   0.1129 -3.174  0.00151 **
+## sexm  0.1150    1.1219   0.1128  1.020  0.30782   
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+##      exp(coef) exp(-coef) lower .95 upper .95
+## trtB    0.6989     1.4307    0.5602     0.872
+## sexm    1.1219     0.8913    0.8994     1.399
+## 
+## Concordance= 0.549  (se = 0.016 )
+## Likelihood ratio test= 10.56  on 2 df,   p=0.005
+## Wald test            = 10.53  on 2 df,   p=0.005
+## Score (logrank) test = 10.62  on 2 df,   p=0.005</code></pre>
+<hr />
+</div>
+<div id="further-references" class="section level3">
+<h3>Further references</h3>
+<p>For a more thorough introduction, see for example <a
+href="https://cran.r-project.org/web/packages/survival/vignettes/survival.pdf">the
+survival package vignette</a> and the other vignettes of the <a
+href="https://cran.r-project.org/web/packages/survival/index.html">survival
+package</a>.</p>
+<p></br></p>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

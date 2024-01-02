@@ -1,0 +1,29 @@
+---
+title: "Part 1:  Introduction and estimation of the effects of point treatments on survival"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+### Lectures
+
+-
+
+---
+
+### R practical
+
+-
+
+---
+
+### Literature
+
+-
+
+</br>

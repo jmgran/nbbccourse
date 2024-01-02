@@ -1,0 +1,29 @@
+---
+title: "Part 3: Further methods for time-dependent treatment strategies"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+### Lectures
+
+-
+
+---
+
+### R practical
+
+-
+
+---
+
+### Literature
+
+-
+
+</br>

@@ -1,0 +1,69 @@
+---
+title: "About this course"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+### Tutors
+
+Jon Michael Gran, Professor at the University of Oslo,
+
+Ruth Keogh, Professor at the London School of Hygiene & Tropical Medicine.
+
+---
+
+### Course overview
+
+The goal of many investigations in medical and epidemiological research is to estimate the effects of treatments and other interventions on health outcomes. Over the recent decades we have seen major developments in methods for causal inference for addressing such questions using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes. The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes, guided by practical examples in R.
+
+---
+
+### Content
+
+The course will cover methods for confounding adjustment with time-to-event outcomes, including inverse probability of treatment weighting and marginal structural models, g-formula, and censoring-and-weighting approaches. We will cover settings in which the treatment of interest is given at a single time point, as well as more complex situations in which interest lies in time-varying treatments. Focus will be on the choice of appropriate estimands and links will be made to the target trial framework. Most of the emphasis will be on simple survival outcomes, but extensions to competing risks will also be discussed. Much of the material will be presented with medical and epidemiological applications in mind, but the methods are equally relevant in other areas, such as demography, social sciences and economics.
+
+The course will combine lectures and computer sessions. There will be an emphasis on practical implementation, and all analyses and exercises will be performed using R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
+
+---
+
+### Who is this course for?
+
+This course is aimed at researchers and students in biostatistics, statistics, epidemiology and related fields. Some knowledge of methods for survival analysis will be assumed, such as experience with estimation of survival curves using the Kaplan-Meier estimator and fitting regression models to time-to-event data. Participants should have some prior experience of using R, though not necessarily in the context of time-to-event analysis or causal inference. Knowledge of causal concepts would be beneficial, but we do not assume this. 
+
+---
+
+### Registration
+
+Registration will open on DATE and close on DATE or when the maximum number of participants has been reached.
+
+---
+
+### Fees
+
+ISCB member: 50 euros
+
+Non-ISCB member – academia: 70 euros
+
+Non-ISCB member – industry: 150 euros
+
+---
+
+### Individuals based in ISCB Education Committee target countries
+
+Up to 10 free places on this course are available for participants from the following regions: Eastern Europe, Africa, South and South-east Asia, the Middle East, South and Central America and the Caribbean.
+
+If you would like to apply for a free place, please email the course organisers with a CV and a short statement about why you would like to attend the course (maximum 200 words). 
+
+---
+
+### Contact
+
+For questions about the course or your registration please contact the course organisers by email.
+
+</br>

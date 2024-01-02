@@ -1,0 +1,29 @@
+---
+title: "Part 4: Extensions to more complex time-to-event outcomes"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+### Lectures
+
+-
+
+---
+
+### R practical
+
+-
+
+---
+
+### Literature
+
+-
+
+</br>
