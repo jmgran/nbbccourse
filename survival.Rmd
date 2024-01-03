@@ -80,7 +80,7 @@ The most common test for comparing two survival curves is the log-rank test. Thi
 survdiff(Surv(futime, death==1) ~ trt, myeloid)
 ```
 
-We see that the p-value for the test is 0.002, which indicates a significant difference between groups at a 5\% significance level.
+We see that the p-value for the test of difference between groups is 0.002.
 
 ---
 
