@@ -19,14 +19,6 @@ For registration see ...
 
 ---
 
-### Preparations
-
-Before participating the course you should make sure to have a working version of [R](https://www.r-project.org) and/or [Rstudio](https://posit.co/download/rstudio-desktop/) on your computer. 
-
-If you have not used [the survival package](https://cran.r-project.org/web/packages/survival/index.html) in R before, it can be recommended to go through the basic functions before the course. You can take a look of our [description of elementary survival analysis in R](survival.html) or use other introductory texts.
-
----
-
 ###  Schedule
 
 **Day 1**
@@ -39,16 +31,16 @@ If you have not used [the survival package](https://cran.r-project.org/web/packa
 
 |                 |                                                                                         |                   |
 |:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|09:30 - 10:15        |Lecture: Causal estimands for time-to-event outcomes and identification using observational data |                          |                       |
-|10:30 - 11:15        |Lecture: Weighting and standardisation for point treatments |                          |
-|11:15 - 12:45        |R practical: Weighting and standardisation for point treatments |                          |
+|09:30 - 10:15        |Lecture: Causal estimands for time-to-event outcomes and identification using observational data | Jon Michael Gran                         |                       |
+|10:30 - 11:15        |Lecture: Weighting and standardisation for point treatments | Ruth Keogh                         |
+|11:15 - 12:45        |R practical: Weighting and standardisation for point treatments | Ruth Keogh                           |
 
 **Part 2: Extensions to time-dependent treatment strategies**
 
 |                 |                                                                                         |                   |
 |:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|13:45 - 14:30        |Lecture: Lecture: Extensions to time-dependent treatment strategies, and the challenge of time-dependent confounding |                          |                       |
-|14:30 - 16:00        |R practical: Artificial censoring and censor weighting |                          |
+|13:45 - 14:30        |Lecture: Extensions to time-dependent treatment strategies, and the challenge of time-dependent confounding |  Jon Michael Gran                        |                       |
+|14:30 - 16:00        |R practical: Artificial censoring and censor weighting | Jon Michael Gran                         |
 
 **Day 2**
  
@@ -56,15 +48,15 @@ If you have not used [the survival package](https://cran.r-project.org/web/packa
 
 |                 |                                                                                         |                   |
 |:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|09:30 - 10:15        |Lecture: The sequential trials approach and marginal structural models |                          |                       |
+|09:30 - 10:15        |Lecture: The sequential trials approach and marginal structural models | Ruth Keogh                         |                       |
 |10:30 - 11:15        |Lecture: The g-formula |Ruth Keogh                          |
-|11:15 - 12:45        |R practical: Estimation using the more advanced methods |                          |
+|11:15 - 12:45        |R practical: Estimation using the more advanced methods |  Ruth Keogh                        |
 
 **Part 4: Extensions to more complex time-to-event outcomes**
 
 |                 |                                                                                         |                   |
 |:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
 |13:45 - 14:30        |Lecture: Estimating causal effects on time-to-event outcomes under competing risks |Jon Michael Gran                          |                       |
-|14:30 - 16:00        |R practical: Extensions of previously introduced methods to competing risks |                          |
+|14:30 - 16:00        |R practical: Extensions of previously introduced methods to competing risks | Jon Michael Gran                          |
 
 </br>

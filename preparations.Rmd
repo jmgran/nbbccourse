@@ -1,0 +1,17 @@
+---
+title: "Preparations"
+---
+
+<style type="text/css">
+  body{
+  font-size: 12pt;
+}
+</style>
+
+---
+
+Before participating the course you should make sure to have a working version of [R](https://www.r-project.org) and/or [Rstudio](https://posit.co/download/rstudio-desktop/) on your computer. 
+
+If you have not used [the survival package](https://cran.r-project.org/web/packages/survival/index.html) in R before, it can be recommended to go through the basic functions before the course. You can take a look of our [description of elementary survival analysis in R](survival.html) or use other introductory texts.
+
+</br>
