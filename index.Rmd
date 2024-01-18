@@ -11,11 +11,11 @@ subtitle: "2-day, online ISCB course in biostatistics (8–9 April 2024)"
 
 ---
 
-### Welcome and course overview
+### Course overview
 
 Welcome to the webpages for this online ISCB course in biostatistics on causal inference for time-to-event outcome with practical applications in R.
 
-The goal of many investigations in medical and epidemiological research is to estimate the effects of treatments and other interventions on health outcomes. Over recent decades we have seen major developments in methods for causal inference for addressing such questions using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes. The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes, guided by practical examples in R.
+The goal of many investigations in medical and epidemiological research is to estimate the effects of treatments and other interventions on health outcomes. Over the recent decades we have seen major developments in methods for causal inference for addressing such questions using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes. The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes, guided by practical examples in R.
 
 More details about the course, including and who it is aimed at and the planned schedule, can be found [here](about.html).
 

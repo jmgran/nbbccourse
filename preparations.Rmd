@@ -12,6 +12,8 @@ title: "Preparations"
 
 Before participating the course please make sure that you have a working version of [R](https://www.r-project.org) and/or [Rstudio](https://posit.co/download/rstudio-desktop/) on your computer. 
 
-If you have not used [the survival package](https://cran.r-project.org/web/packages/survival/index.html) in R before, we recommend familiarising yourself with the basic functions before the course. You can take a look of our [description of elementary survival analysis in R](survival.html) or use other introductory texts. The tutorial paper by Andersen et al. (2020) is also recommended (https://onlinelibrary.wiley.com/doi/full/10.1002/sim.8757).
+If you have not used [the survival package](https://cran.r-project.org/web/packages/survival/index.html) in R before, we recommend familiarising yourself with the basic functions before the course. You can take a look of our [description of elementary survival analysis in R](survival.html) or use other introductory texts. 
+
+The tutorial paper by Andersen et al. (2020) is also recommended (https://doi.org/10.1002/sim.8757).
 
 </br>
