@@ -10,11 +10,7 @@ title: "About this course"
 
 ---
 
-### Tutors
 
-Jon Michael Gran, Professor at the University of Oslo,
-
-Ruth Keogh, Professor at the London School of Hygiene & Tropical Medicine.
 
 ---
 
@@ -34,31 +30,52 @@ The course will combine lectures and computer sessions. There will be an emphasi
 
 ### Who is this course for?
 
-This course is aimed at researchers and students in biostatistics, statistics, epidemiology and related fields. Some knowledge of methods for survival analysis will be assumed, such as experience with estimation of survival curves using the Kaplan-Meier estimator and fitting regression models to time-to-event data. Participants should have some prior experience of using R, though not necessarily in the context of time-to-event analysis or causal inference. Knowledge of causal concepts would be beneficial, but we do not assume this. 
+This course is aimed at researchers and students in biostatistics, statistics, epidemiology and related fields. Some knowledge of methods for survival analysis will be assumed, such as experience with estimation of survival curves using the Kaplan-Meier estimator and fitting regression models to time-to-event data. Participants should have some prior experience of using R, though not necessarily in the context of time-to-event analysis or causal inference. Knowledge of causal concepts would be beneficial, but we will not assume this. 
 
 ---
 
-### Registration
+###  Schedule
 
-Registration will open on DATE and close on DATE or when the maximum number of participants has been reached.
+All times are in CET.
 
----
+**Day 1**
 
-### Fees
+|Time                 |Topic                                                                                         |Tutor                   |
+|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
+|09:15 - 09:30         |Welcome and introductions                                      |                               |
 
-ISCB member: 50 euros
+**Part 1: Introduction and estimation of the effects of point treatments on survival**
 
-Non-ISCB member – academia: 70 euros
+|                 |                                                                                         |                   |
+|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
+|09:30 - 10:15        |Lecture: Causal estimands for time-to-event outcomes and identification using observational data | Jon Michael Gran                         |                       |
+|10:30 - 11:15        |Lecture: Weighting and standardisation for point treatments | Ruth Keogh                         |
+|11:15 - 12:45        |R practical: Weighting and standardisation for point treatments | Ruth Keogh                           |
 
-Non-ISCB member – industry: 150 euros
+**Part 2: Extensions to time-dependent treatment strategies**
 
----
+|                 |                                                                                         |                   |
+|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
+|13:45 - 14:30        |Lecture: Extensions to time-dependent treatment strategies, and the challenge of time-dependent confounding |  Jon Michael Gran                        |                       |
+|14:30 - 16:00        |R practical: Artificial censoring and censor weighting | Jon Michael Gran                         |
 
-### Individuals based in ISCB Education Committee target countries
+**Day 2**
+ 
+**Part 3: Further methods for time-dependent treatment strategies**
 
-Up to 10 free places on this course are available for participants from the following regions: Eastern Europe, Africa, South and South-east Asia, the Middle East, South and Central America and the Caribbean.
+|                 |                                                                                         |                   |
+|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
+|09:30 - 10:15        |Lecture: The sequential trials approach and marginal structural models | Ruth Keogh                         |                       |
+|10:30 - 11:15        |Lecture: The g-formula |Ruth Keogh                          |
+|11:15 - 12:45        |R practical: Estimation using the more advanced methods |  Ruth Keogh                        |
 
-If you would like to apply for a free place, please email the course organisers with a CV and a short statement about why you would like to attend the course (maximum 200 words). 
+**Part 4: Extensions to more complex time-to-event outcomes**
+
+|                 |                                                                                         |                   |
+|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
+|13:45 - 14:30        |Lecture: Estimating causal effects on time-to-event outcomes under competing risks |Jon Michael Gran                          |                       |
+|14:30 - 16:00        |R practical: Extensions of previously introduced methods to competing risks | Jon Michael Gran                          |
+
 
 ---
 

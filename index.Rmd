@@ -11,58 +11,57 @@ subtitle: "2-day, online ISCB course in biostatistics (8–9 April 2024)"
 
 ---
 
-### Welcome
+### Welcome and course overview
 
 Welcome to the webpages for this online ISCB course in biostatistics on causal inference for time-to-event outcome with practical applications in R.
 
-To register for the course, follow the instruction at ... 
+The goal of many investigations in medical and epidemiological research is to estimate the effects of treatments and other interventions on health outcomes. Over recent decades we have seen major developments in methods for causal inference for addressing such questions using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes. The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes, guided by practical examples in R.
 
-Note that there is a limit to the number of participants to the course and that registration will be closed when this limit is reached.
-
-All teaching resources will be put out on this webpage in due time before the beginning of the course. Information about how to access these files will sent out to registrered participants together with Zoom links for the lectures and R practicals.
-
-More details about the course can be found [here](about.html).
+More details about the course, including and who it is aimed at and the planned schedule, can be found [here](about.html).
 
 ---
 
-###  Schedule
+### Course tutors
 
-**Day 1**
+Jon Michael Gran, Professor at the University of Oslo.
 
-|Time                 |Topic                                                                                         |Tutor                   |
-|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|09:15 - 09:30         |Welcome and introductions                                      |                               |
+Ruth Keogh, Professor at the London School of Hygiene & Tropical Medicine.
 
-**Part 1: Introduction and estimation of the effects of point treatments on survival**
+---
 
-|                 |                                                                                         |                   |
-|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|09:30 - 10:15        |Lecture: Causal estimands for time-to-event outcomes and identification using observational data | Jon Michael Gran                         |                       |
-|10:30 - 11:15        |Lecture: Weighting and standardisation for point treatments | Ruth Keogh                         |
-|11:15 - 12:45        |R practical: Weighting and standardisation for point treatments | Ruth Keogh                           |
+###Registration
 
-**Part 2: Extensions to time-dependent treatment strategies**
+To register for the course, please follow this link: https://www.eventbrite.co.uk/e/causal-inference-for-time-to-event-outcomes-registration-779015926607
 
-|                 |                                                                                         |                   |
-|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|13:45 - 14:30        |Lecture: Extensions to time-dependent treatment strategies, and the challenge of time-dependent confounding |  Jon Michael Gran                        |                       |
-|14:30 - 16:00        |R practical: Artificial censoring and censor weighting | Jon Michael Gran                         |
+Registration is now open and will close on 31st March 2024 or when the maximum number of participants is reached.
 
-**Day 2**
- 
-**Part 3: Further methods for time-dependent treatment strategies**
+---
 
-|                 |                                                                                         |                   |
-|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|09:30 - 10:15        |Lecture: The sequential trials approach and marginal structural models | Ruth Keogh                         |                       |
-|10:30 - 11:15        |Lecture: The g-formula |Ruth Keogh                          |
-|11:15 - 12:45        |R practical: Estimation using the more advanced methods |  Ruth Keogh                        |
+### Fees
 
-**Part 4: Extensions to more complex time-to-event outcomes**
+ISCB member: 50 euros
 
-|                 |                                                                                         |                   |
-|:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
-|13:45 - 14:30        |Lecture: Estimating causal effects on time-to-event outcomes under competing risks |Jon Michael Gran                          |                       |
-|14:30 - 16:00        |R practical: Extensions of previously introduced methods to competing risks | Jon Michael Gran                          |
+Non-ISCB member – academia: 70 euros
+
+Non-ISCB member – industry: 150 euros
+
+---
+
+### Individuals based in ISCB Education Committee target countries
+
+Up to 10 free places on this course are available for participants from the following regions: Eastern Europe, Africa, South and South-east Asia, the Middle East, South and Central America and the Caribbean.
+
+If you would like to apply for a free place, please email the course organisers with a CV and a short statement about why you would like to attend the course (maximum 200 words) before 29th February 2024. 
+
+---
+
+### Contact
+
+For questions about the course or your registration please contact the course organisers by email:
+
+Jon Michael Gran, j.m.gran "at" medisin.uio.no
+
+Ruth Keogh, ruth.keogh "at" lshtm.ac.uk
+
 
 </br>
