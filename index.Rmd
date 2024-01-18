@@ -29,7 +29,7 @@ Ruth Keogh, Professor at the London School of Hygiene & Tropical Medicine.
 
 ---
 
-###Registration
+### Registration
 
 To register for the course, please follow this link: https://www.eventbrite.co.uk/e/causal-inference-for-time-to-event-outcomes-registration-779015926607
 
