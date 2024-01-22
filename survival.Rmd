@@ -12,7 +12,7 @@ title: "Basic survival analysis in R"
 
 ### Getting started
 
-The [survival package](https://cran.r-project.org/web/packages/survival/index.html) is installed along with the `base` functions in R, so all you need to do after opening R is to load the package using the `library()` function.
+The [survival package](https://cran.r-project.org/web/packages/survival/index.html) by Terry Therneau and collaborators is installed along with the `base` functions in R, so all you need to do after opening R is to load the package using the `library()` function.
 
 The package comes with various in built datasets. For a full list, see the start of the index of [the survival reference manual](https://cran.r-project.org/web/packages/survival/survival.pdf). Each dataset is described in detailed in the manual. 
 
