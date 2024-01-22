@@ -13,9 +13,9 @@ subtitle: "2-day, online ISCB course in biostatistics (8–9 April 2024)"
 
 ### Course overview
 
-Welcome to the webpages for this online ISCB course in biostatistics on causal inference for time-to-event outcome with practical applications in R.
+The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes. Topics covered will include inverse probability of treatment weighting and marginal structural models, g-formula, and censoring-and-weighting approaches. The course will combine lectures and computer sessions. 
 
-The goal of many investigations in medical and epidemiological research is to estimate the effects of treatments and other interventions on health outcomes. Over the recent decades we have seen major developments in methods for causal inference for addressing such questions using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes. The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes, guided by practical examples in R.
+The course will combine lectures and computer sessions. There will be an emphasis on practical implementation, and all analyses and exercises will be performed using R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
 
 More details about the course, including and who it is aimed at and the planned schedule, can be found [here](about.html).
 
@@ -23,15 +23,15 @@ More details about the course, including and who it is aimed at and the planned 
 
 ### Course tutors
 
-Jon Michael Gran, Professor at the University of Oslo.
+[Jon Michael Gran](https://www.med.uio.no/imb/english/people/aca/jonmic/index.html){target="_blank"}, Professor at the University of Oslo.
 
-Ruth Keogh, Professor at the London School of Hygiene & Tropical Medicine.
+[Ruth Keogh](https://www.lshtm.ac.uk/aboutus/people/keogh.ruth){target="_blank"}, Professor at the London School of Hygiene & Tropical Medicine.
 
 ---
 
 ### Registration
 
-To register for the course, please follow this link: https://www.eventbrite.co.uk/e/causal-inference-for-time-to-event-outcomes-registration-779015926607
+To register for the course, please follow [this link](https://www.eventbrite.co.uk/e/causal-inference-for-time-to-event-outcomes-registration-779015926607){target="_blank"}.
 
 Registration is now open and will close on 31st March 2024 or when the maximum number of participants is reached.
 
@@ -57,11 +57,7 @@ If you would like to apply for a free place, please email the course organisers 
 
 ### Contact
 
-For questions about the course or your registration please contact the course organisers by email:
-
-Jon Michael Gran, j.m.gran "at" medisin.uio.no
-
-Ruth Keogh, ruth.keogh "at" lshtm.ac.uk
+For questions about the course or your registration please contact the course organisers by email on j.m.gran "at" medisin.uio.no or ruth.keogh "at" lshtm.ac.uk.
 
 
 </br>

@@ -16,15 +16,17 @@ title: "About this course"
 
 ### Course overview
 
-The goal of many investigations in medical and epidemiological research is to estimate the effects of treatments and other interventions on health outcomes. Over the recent decades we have seen major developments in methods for causal inference for addressing such questions using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes. The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes, guided by practical examples in R.
+The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes. Topics covered will include inverse probability of treatment weighting and marginal structural models, g-formula, and censoring-and-weighting approaches. The course will combine lectures and computer sessions. 
+
+The course will combine lectures and computer sessions. There will be an emphasis on practical implementation, and all analyses and exercises will be performed using R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
 
 ---
 
 ### Content
 
-The course will cover methods for confounding adjustment with time-to-event outcomes, including inverse probability of treatment weighting and marginal structural models, g-formula, and censoring-and-weighting approaches. We will cover settings in which the treatment of interest is given at a single time point, as well as more complex situations in which interest lies in time-varying treatments. Focus will be on the choice of appropriate estimands and links will be made to the target trial framework. Most of the emphasis will be on simple survival outcomes, but extensions to competing risks will also be discussed. Much of the material will be presented with medical and epidemiological applications in mind, but the methods are equally relevant in other areas, such as demography, social sciences and economics.
+Over the recent decades we have seen major developments in methods for causal inference using observational data, but the practical application of these methods can be challenging, especially in the context of survival and other time-to-event outcomes.
 
-The course will combine lectures and computer sessions. There will be an emphasis on practical implementation, and all analyses and exercises will be performed using R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
+This course will cover methods for confounding adjustment with time-to-event outcomes, including inverse probability of treatment weighting and marginal structural models, g-formula, and censoring-and-weighting approaches. We will cover settings in which the treatment of interest is given at a single time point, as well as more complex situations in which interest lies in time-varying treatments. Focus will be on the choice of appropriate estimands and links will be made to the target trial framework. Most of the emphasis will be on simple survival outcomes, but extensions to competing risks will also be discussed. Much of the material will be presented with medical and epidemiological applications in mind, but the methods are equally relevant in other areas, such as demography, social sciences and economics.
 
 ---
 
@@ -81,11 +83,7 @@ All times are in CET.
 
 ### Contact
 
-For questions about the course or your registration please contact the course organisers by email:
-
-Jon Michael Gran, j.m.gran "at" medisin.uio.no
-
-Ruth Keogh, ruth.keogh "at" lshtm.ac.uk
+For questions about the course or your registration please contact the course organisers by email on j.m.gran "at" medisin.uio.no or ruth.keogh "at" lshtm.ac.uk.
 
 
 </br>
