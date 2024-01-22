@@ -13,7 +13,7 @@ subtitle: "2-day, online ISCB course in biostatistics (8–9 April 2024)"
 
 ### Course overview
 
-The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes. Topics covered will include inverse probability of treatment weighting and marginal structural models, g-formula, and censoring-and-weighting approaches. The course will combine lectures and computer sessions. 
+The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes. Topics covered will include time-dependent treatments and confounding, inverse probability of treatment weighting and marginal structural models, g-formula and censoring-and-weighting approaches, and competing risks.
 
 The course will combine lectures and computer sessions. There will be an emphasis on practical implementation, and all analyses and exercises will be performed using R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
 
