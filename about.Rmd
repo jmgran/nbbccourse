@@ -10,10 +10,6 @@ title: "About this course"
 
 ---
 
-
-
----
-
 ### Course overview
 
 The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes. Topics covered will include time-dependent treatments and confounding, inverse probability of treatment weighting and marginal structural models, g-formula, censoring-and-weighting approaches and competing risks. 
