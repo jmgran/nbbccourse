@@ -14,6 +14,8 @@ Before participating the course please make sure that you have a working version
 
 If you have not used [the survival package](https://cran.r-project.org/web/packages/survival/index.html) in R before, we recommend familiarising yourself with the basic functions before the course. You can take a look of our [description of elementary survival analysis in R](survival.html) or use other introductory texts. 
 
-The tutorial paper by Andersen et al. (2020) is also recommended (https://doi.org/10.1002/sim.8757).
+The tutorial paper by Andersen et al. (2020) is also recommended for general background on some fundamental concepts and methods in time-to-event analysis (https://doi.org/10.1002/sim.8757).
+
+The course will not assume any prior knowledge about causal inference in the time-to-event analysis context, however having some familiarity with causal concepts would be beneficial. For example you could take a look at Chapters 1-3 and Chapter 17 in the book of Hernan and Robins, which can be freely downloaded here:  https://www.hsph.harvard.edu/miguel-hernan/causal-inference-book/
 
 </br>
