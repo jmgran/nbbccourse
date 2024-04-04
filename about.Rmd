@@ -34,7 +34,7 @@ This course is aimed at researchers and students in biostatistics, statistics, e
 
 ###  Schedule
 
-All times are in CET.
+All times are in GMT+2.
 
 **Day 1**
 
