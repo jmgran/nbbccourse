@@ -12,10 +12,10 @@ navbar:
   right:
   - text: "Home"
     href: index.html
-  - text: "Resources"
-    menu:
-    - text: "Preparations"
-      href: preparations.html
+  #- text: "Resources"
+    #menu:
+  - text: "Preparations"
+    href: preparations.html
     #- text: "Part 1"
     #  href: part1.html
     #- text: "Part 2"
