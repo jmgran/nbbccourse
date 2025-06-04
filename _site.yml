@@ -1,5 +1,5 @@
-name: "iscbcourse"
-title: "ISCB course Spring 2024"
+name: "nbbccourse"
+title: "NBBC course Spring 2025"
 type: website
 output_dir: "docs"
 output:
@@ -7,7 +7,7 @@ output:
     self_contained: no
     theme: flatly
 navbar:
-  title: 'ISCB Course Spring 2024'
+  title: 'NBBC Course Spring 2025'
   search: true
   right:
   - text: "Home"
@@ -28,5 +28,5 @@ navbar:
     href: about.html
   #- label: "GitHub"
   #  icon: fa-github fa-lg
-  #  href: http://github.com/jmgran/iscbcourse
+  #  href: http://github.com/jmgran/nbbccourse
 

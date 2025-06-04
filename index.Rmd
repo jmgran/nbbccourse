@@ -1,6 +1,6 @@
 ---
 title: "Causal inference for time-to-event outcomes -- with practical applications in R"
-subtitle: "2-day, online ISCB course in biostatistics (8–9 April 2024)"
+subtitle: "One day pre conference course at the NBBC (June 9, 2025)"
 ---
 
 <style type="text/css">
@@ -31,29 +31,7 @@ More details about the course, including and who it is aimed at and the planned 
 
 ### Registration
 
-Registration is now closed as the maximum number of regular participants has been reached.
-
-We hope to repeat the course also at later dates, so    if interested, keep an eye out for future announcements. 
-
-Note that individuals based in ISCB Education Committee target countries can still apply until Feb 29th.
-
----
-
-### Fees
-
-ISCB member: 50 euros
-
-Non-ISCB member – academia: 70 euros
-
-Non-ISCB member – industry: 150 euros
-
----
-
-### Individuals based in ISCB Education Committee target countries
-
-Up to 10 free places on this course are available for participants from the following regions: Eastern Europe, Africa, South and South-east Asia, the Middle East, South and Central America and the Caribbean.
-
-If you would like to apply for a free place, please email the course organisers with a CV and a short statement about why you would like to attend the course (maximum 200 words) before 29th February 2024. 
+Registration is now closed.
 
 ---
 
