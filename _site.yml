@@ -14,6 +14,8 @@ navbar:
     href: index.html
   #- text: "Resources"
     #menu:
+  - text: "Program"
+    href: program.html
   - text: "Preparations"
     href: preparations.html
     #- text: "Part 1"
@@ -24,10 +26,7 @@ navbar:
     #  href: part3.html
     #- text: "Part 4"
     #s  href: part4.html
-  - text: "About"
-    href: about.html
   #- label: "GitHub"
   #  icon: fa-github fa-lg
   #  href: http://github.com/jmgran/nbbccourse
-  # Test test. test.
 

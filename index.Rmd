@@ -1,6 +1,6 @@
 ---
 title: "Causal inference for time-to-event outcomes -- with practical applications in R"
-subtitle: "One day pre conference course at the NBBC (June 9, 2025)"
+subtitle: "One-day pre-conference course at the Nordic Baltic Biometrics Conference in Oslo, June 9, 2025"
 ---
 
 <style type="text/css">
@@ -13,11 +13,11 @@ subtitle: "One day pre conference course at the NBBC (June 9, 2025)"
 
 ### Course overview
 
-The overall aim of this course is to give an overview of concepts and methods for estimating causal effects of treatments on time-to-event outcomes. Topics covered will include time-dependent treatments and confounding, inverse probability of treatment weighting and marginal structural models, g-formula, censoring-and-weighting approaches and competing risks. 
+This course gives an overview of concepts and methods for estimating causal effects of treatments on censored time-to-event outcomes. There will be an emphasis on practical implementation, and the course will combine lectures and demonstrations in R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
 
-The course will combine lectures and computer sessions. There will be an emphasis on practical implementation, and all analyses and exercises will be performed using R. At the end of the course, participants should be equipped to perform analyses to address questions about causal effects of treatments on their own data.
+Topics discussed include choices of causal estimands, censoring and identification assumptions, and methods for confounding adjustment. Both point treatments and time-dependent treatment strategies will be covered, and methods such as standardisation/g-computation, inverse probability of treatment weighting and cloning-censoring-and-weighting approaches. Links will be made to the target trial framework.
 
-More details about the course, including and who it is aimed at and the planned schedule, can be found [here](about.html).
+More details about the course, including location, can be found [at the NBBC web pages](https://www.nbbc2025.com/pre-conference-course){target="_blank"}. For an updated program, see [here](program.html).
 
 ---
 
@@ -35,9 +35,8 @@ Registration is now closed.
 
 ---
 
-### Contact
+### Contact and further information
 
-For questions about the course or your registration please contact the course organisers by email on j.m.gran "at" medisin.uio.no or ruth.keogh "at" lshtm.ac.uk.
-
+For questions about the course please contact the course tutors by email on j.m.gran "at" medisin.uio.no or ruth.keogh "at" lshtm.ac.uk. For practical questions, such as registration etc, contact the conference organisers through the web pages of the [Nordic Baltic Biometrics Conference (NBBC)](https://www.nbbc2025.com){target="_blank"}.
 
 </br>
