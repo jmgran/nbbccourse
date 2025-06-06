@@ -19,7 +19,7 @@ All times are in CEST.
 |11:00 - 11:45         |Lecture: Causal estimands for time-to-event outcomes and identification using observational data | Jon Michael Gran                       |                       |
 |*11:45 - 12:00*        |*Short break* |                       |
 |12:00 - 12:45        |Lecture: Estimating the effects of point treatments | Ruth Keogh                         |
-|12:45 - 13:15        |R demo: Methods for point treatment strategies | Jon Michael Gran                           |
+|12:45 - 13:15        |R demo: Methods for point treatments | Jon Michael Gran                           |
 
 |                 |                                                                                         |                   |
 |:----------------------|:-----------------------------------------------------------------------------------------------|:-----------------------------|
